@@ -1,0 +1,19 @@
+{
+  "name": "date-to-words",
+  "version": "0.0.1",
+  "description": "Convert a Date to Human Readable Formats",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "date",
+    "javascript"
+  ],
+  "author": "Lance Turri",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.16.1",
+    "mocha": "^3.2.0"
+  }
+}
