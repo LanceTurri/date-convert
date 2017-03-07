@@ -1,7 +1,7 @@
 let assert = require('assert');
 let lib = require('../convert.js');
 
-describe('converts dates properly', () => {
+describe('converts standard date formats properly', () => {
     let testValues = {
         // Change these dates to major historical dates
         isoDate: "2015-03-25",
@@ -9,10 +9,6 @@ describe('converts dates properly', () => {
         longDate: "Mar 25 2015",
         longDateReverse: "25 Mar 2015",
         fullDate: "Wednesday March 25 2015",
-        twoZeros: "03/25/2001",
-        secondZero: "02/25/2010",
-        thirdZero: "02/25/2103",
-        evenYear: "02/25/1900"
     }
 
     it('converts an ISO Date string', () => {
@@ -34,20 +30,40 @@ describe('converts dates properly', () => {
     it('converts a full date string', () => {
         assert.equal('March twenty fifth twenty fifteen', lib.convertDate(testValues.fullDate));
     });
+});
+
+describe('it also converts special cases correctly', () => {
+    let testValues = {
+        kubrick: "01/01/2001",
+        secondZero: "02/02/2010",
+        thirdZero: "03/03/2103",
+        century: "04/04/1900",
+        millenium: "05/05/2000",
+        random1: "06/06/2045"
+
+    }
 
     it('converts a date string with two zeros', () => {
-        assert.equal('March twenty fifth two thousand and one', lib.convertDate(testValues.twoZeros));
+        assert.equal('January first two thousand and one', lib.convertDate(testValues.kubrick));
     });
 
     it('converts a short date string with a ten in the last pair', () => {
-        assert.equal('February twenty fifth twenty ten', lib.convertDate(testValues.secondZero));
+        assert.equal('February second twenty ten', lib.convertDate(testValues.secondZero));
     });
 
     it('converts a short date string with a zero in the third place', () => {
-        assert.equal('February twenty fifth twenty one o three', lib.convertDate(testValues.thirdZero));
+        assert.equal('March third twenty one o three', lib.convertDate(testValues.thirdZero));
+    });
+
+    it('converts a  date string ending in two zeros', () => {
+        assert.equal('April fourth nineteen hundred', lib.convertDate(testValues.century));
+    });
+
+    it('converts a date string of a millenium', () => {
+        assert.equal('May fifth two thousand', lib.convertDate(testValues.millenium));
     });
 
     it('converts a short date string', () => {
-        assert.equal('February twenty fifth nineteen hundred', lib.convertDate(testValues.evenYear));
+        assert.equal('June sixth twenty forty five', lib.convertDate(testValues.random1));
     });
-});
+})

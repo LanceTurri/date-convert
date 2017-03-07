@@ -4,7 +4,7 @@ module.exports = {
             months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             ordinals: ['zero', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eigth', 'ninth', 'tenth', 'eleventh', 'twelvth', 'thirteenth', 'fourteenth', 'fifteenth', 'sixteenth', 'seventeenth', 'eighteenth', 'nineteenth', 'twentieth', 'twenty first', 'twenty second', 'twenty third', 'twenty fourth', 'twenty fifth', 'twenty sixth', 'twenty seventh', 'twenty eight', 'twenty nine', 'thirtieth', 'thirty first'],
             
-            tens: ['zero', 'ten', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'],
+            tens: ['zero', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'],
             ones: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
         }
 
@@ -37,7 +37,7 @@ module.exports = {
 
         if (dateMap.year.full % 1000 === 0) {
             // Then this is a year to be suffixed with thousand. EX: 2000, 5000, 17000, etc.
-            year = `${dateStrings.ones[dateMap.year.y1]} thousand`;
+            year = `${dateStrings.ones[dateMap.year.y1 - 1]} thousand`;
         } else if (dateMap.year.full % 100 === 0) {
             // Then this is a year that needs to be suffixed with hundred. EX: 1500, 1900, etc.
             year = `${dateStrings.ones[dateMap.year.y12 - 1]} hundred`;
@@ -90,8 +90,6 @@ module.exports = {
                 // We assume this is already a Date object.
                 break;
         }
-
-        // Handle date object
 
         let dateMap = {
             "day": dateInput.getUTCDate(),
