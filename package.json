@@ -1,14 +1,15 @@
 {
-  "name": "date-to-words",
+  "name": "date-translator",
   "version": "0.0.1",
-  "description": "Convert a Date to Human Readable Formats",
+  "description": "Translate a Date to Human Readable Formats",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "keywords": [
     "date",
-    "javascript"
+    "javascript",
+    "sentences"
   ],
   "author": "Lance Turri",
   "license": "MIT",
