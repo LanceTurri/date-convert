@@ -1,6 +1,6 @@
 {
   "name": "date-sentences",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Translate a Date into a human readable sentence.",
   "main": "./core/translate.js",
   "keywords": [

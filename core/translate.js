@@ -19,13 +19,15 @@ module.exports = (date) => {
     if (dateMap.year % 100 === 0) {
         // Then this is a year to be suffixed with thousand (e.g. 2000) or with a hundred (e.g. 1900)
         year = centuries(stringifiedYear);
-
     } else {
         if (dateMap.year >= 1000) {
             year += thousands(stringifiedYear);
         }
         
-        year += hundreds(stringifiedYear);
+        if (dateMap.year >= 99) {
+            year += hundreds(stringifiedYear);
+        }
+
         year += decades(stringifiedYear);
     }
 
