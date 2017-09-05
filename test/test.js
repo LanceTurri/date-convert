@@ -1,5 +1,5 @@
 const assert = require('assert');
-const translate = require('../core/translate');
+const translate = require('../core/convert');
 const dateStrings = require('../core/dateStrings');
 const parseDate = require('../lib/parseDate');
 
