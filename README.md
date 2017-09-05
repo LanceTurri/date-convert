@@ -2,11 +2,24 @@
 
 # Sentence Format Date Converter
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/LanceTurri/date-convert.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/LanceTurri/date-convert.svg?branch=develop)](https://travis-ci.org/LanceTurri/date-convert)
 [![Coverage Status](https://coveralls.io/repos/github/LanceTurri/date-convert/badge.svg?branch=develop)](https://coveralls.io/github/LanceTurri/date-convert?branch=develop)
 
 This library is meant for applications to take dates in a standard format (`string` or `Date object`) and convert them into human readable, sentence format. It's especially useful for ADA optimizations since not all screen readers handle date shorthand very well. 
+
+## Installation
+
+Install via npm:
+
+```sh
+$ npm install date-convert
+```
+
+Or via yarn:
+
+```sh
+$ yarn add date-convert
+```
 
 ## Translate the Dates!
 The main function in this library will take any string date or Date object and convert it to a sentence. This is an example of how to use it:
@@ -25,20 +38,6 @@ convertDate('07/04/1776') // => 'July fourth, seventeen seventy six'
 convertDate('August 29 2456') // => 'August twenty ninth, two thousand fifty six'
 convertDate('01/01/2000') // => 'January first, two thousand'
 convertDate('Tuesday March 15, 462') // => 'March fifteenth, four hundred sixty two'
-```
-
-## Installation
-
-Install via npm:
-
-```sh
-$ npm install date-convert
-```
-
-Or via yarn:
-
-```sh
-$ yarn add date-convert
 ```
 
 ## License
