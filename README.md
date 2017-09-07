@@ -35,7 +35,7 @@ Any format that can be read by the Date constructor will be able to be converted
 ```javascript
 convertDate('2010-03-25') // => 'March twenty fifth, two thousand ten'
 convertDate('07/04/1776') // => 'July fourth, seventeen seventy six'
-convertDate('August 29 2456') // => 'August twenty ninth, two thousand fifty six'
+convertDate('August 29 2456') // => 'August twenty ninth, two thousand four hundred fifty six'
 convertDate('01/01/2000') // => 'January first, two thousand'
 convertDate('Tuesday March 15, 462') // => 'March fifteenth, four hundred sixty two'
 ```

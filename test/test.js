@@ -75,7 +75,8 @@ describe('it also converts special case years', function() {
         thirdZero: "03/03/2103",
         century: "04/04/1900",
         millenium: "05/05/2000",
-        random1: "06/06/2045",
+        nearFuture: "06/06/2045",
+        farFuture: "07/07/2456",
         subThousand: "06/06/465"
     }
 
@@ -104,6 +105,10 @@ describe('it also converts special case years', function() {
     });
 
     it('converts a short date string (06/06/2045)', function() {
-        assert.equal(translate(testValues.random1), 'June sixth, two thousand forty five');
+        assert.equal(translate(testValues.nearFuture), 'June sixth, two thousand forty five');
+    });
+
+    it('converts a short date string (07/07/2456)', function() {
+        assert.equal(translate(testValues.farFuture), 'July seventh, two thousand four hundred fifty six');
     });
 });
