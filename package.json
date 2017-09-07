@@ -1,6 +1,6 @@
 {
   "name": "date-convert",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Convert a Date into a human readable sentence.",
   "main": "./core/convert.js",
   "keywords": [
@@ -14,7 +14,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LanceTurri/date-translator"
+    "url": "https://github.com/LanceTurri/date-convert"
   },
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha",

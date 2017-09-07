@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/LanceTurri/date-convert.svg?branch=develop)](https://travis-ci.org/LanceTurri/date-convert)
 [![Coverage Status](https://coveralls.io/repos/github/LanceTurri/date-convert/badge.svg?branch=develop)](https://coveralls.io/github/LanceTurri/date-convert?branch=develop)
 
-This library is meant for applications to take dates in a standard format (`string` or `Date object`) and convert them into human readable, sentence format. It's especially useful for ADA optimizations since not all screen readers handle date shorthand very well. 
+This library is meant for applications to take dates in a standard format (`string` or `Date object`) and convert them into a human readable, sentence format.
 
 ## Installation
 
