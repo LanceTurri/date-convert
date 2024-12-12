@@ -1,33 +1,83 @@
 {
-  "name": "date-convert",
-  "version": "0.1.3",
-  "description": "Convert a Date into a human readable sentence.",
-  "main": "./core/convert.js",
-  "keywords": [
-    "ada",
-    "convert",
-    "date",
-    "readable",
-    "sentences"
-  ],
-  "author": "Lance Turri",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/LanceTurri/date-convert"
-  },
-  "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha",
-    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "coveralls": "^2.13.1",
-    "eslint": "^4.5.0",
-    "eslint-config-airbnb-base": "^12.0.0",
-    "eslint-plugin-import": "^2.7.0",
-    "mocha": "^3.5.0",
-    "mocha-lcov-reporter": "^1.3.0",
-    "nyc": "^11.1.0"
-  }
+    "name": "date-convert",
+    "version": "0.2.0",
+    "description": "Convert a Date into a human readable sentence.",
+    "keywords": [
+        "ada",
+        "convert",
+        "date",
+        "readable",
+        "sentences"
+    ],
+    "main": "./dist/package-name.cjs",
+    "module": "./dist/package-name.esm.js",
+    "jsdelivr": "./dist/package-name.iife.js",
+    "exports": {
+        ".": {
+            "require": "./dist/package-name.cjs",
+            "import": "./dist/package-name.esm.js",
+            "types": "./dist/package-name.d.ts"
+        },
+        "./dist/": {
+            "import": "./dist/",
+            "require": "./dist/",
+            "types": "./dist/"
+        }
+    },
+    "author": "Lance Turri",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LanceTurri/date-convert"
+    },
+    "scripts": {
+        "dev": "vite --host",
+        "prebuild": "rm -rf dist/*",
+        "build": "tsc && vite build",
+        "postbuild": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+        "test": "vitest",
+        "test:coverage": "vitest --coverage",
+        "format": "prettier . --write",
+        "upgrade": "upgradeps",
+        "release": "npm run build && np"
+    },
+    "bugs": {
+        "url": "https://github.com/LanceTurri/date-convert/issues"
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE.md",
+        "CHANGELOG.md",
+        "src",
+        "package.json"
+    ],
+    "homepage": "https://github.com/LanceTurri/date-convert#readme",
+    "private": false,
+    "type": "module",
+    "types": "./dist/date-convert.d.ts",
+    "typesVersions": {
+        "*": {
+            "*": [
+                "./dist/date-convert.d.ts"
+            ]
+        }
+    },
+    "typings": "./dist/date-convert.d.ts",
+    "devDependencies": {
+        "@types/jsdom": "^21.1.6",
+        "@types/node": "^20.11.5",
+        "@vitest/coverage-v8": "^1.2.1",
+        "dts-bundle-generator": "^9.2.4",
+        "jsdom": "^24.1.0",
+        "lint-staged": "^15.2.0",
+        "np": "^10.0.6",
+        "prettier": "^3.2.4",
+        "terser": "^5.31.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3",
+        "upgradeps": "^2.0.6",
+        "vite": "^5.0.12",
+        "vitest": "^1.2.1"
+    }
 }

@@ -1,8 +1,6 @@
 {
     "extends": "airbnb-base",
-    "plugins": [
-        "import"
-    ],
+    "plugins": ["import"],
     "rules": {
         "arrow-body-style": "off",
         "indent": "off",

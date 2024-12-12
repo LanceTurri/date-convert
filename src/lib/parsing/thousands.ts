@@ -1,6 +1,6 @@
-const dateStrings = require('../core/dateStrings');
+import { ONES } from '../constants';
 
-module.exports = (year) => {
+export const parseThousands = (year: string) => {
     let frontPair = parseInt(year.slice(0, 2));
     let thousandDigit = parseInt(year.charAt(0));
 
@@ -8,5 +8,5 @@ module.exports = (year) => {
         return '';
     }
 
-    return `${dateStrings.ones[thousandDigit]} thousand `;
+    return `${ONES[thousandDigit]} thousand `;
 };

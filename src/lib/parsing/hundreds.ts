@@ -1,8 +1,8 @@
-const dateStrings = require('../core/dateStrings');
+import { ONES } from '../constants';
 
-module.exports = (year) => {
-    let frontPair = null;
-    let hundredDigit = null;
+export const parseHundreds = (year: string) => {
+    let frontPair: number;
+    let hundredDigit: number;
 
     if (year.length === 4) {
         frontPair = parseInt(year.slice(0, 2), 10);
@@ -16,10 +16,12 @@ module.exports = (year) => {
     if (hundredDigit === 0) {
         // 1000
         return '';
-    } else if (frontPair < 20) {
-        // 1900
-        return `${dateStrings.ones[frontPair]} hundred `;
     }
 
-    return `${dateStrings.ones[hundredDigit]} hundred `;
+    if (frontPair < 20) {
+        // 1900
+        return `${ONES[frontPair]} hundred `;
+    }
+
+    return `${ONES[hundredDigit]} hundred `;
 };
